@@ -10,6 +10,7 @@
     <% @order.line_items.each do |line_item| %>
       <%= render :partial => "orders/lineitem", :locals => {:line_item => line_item} %>
     <% end %>
+      <h2>Total: <%= number_with_precision(@order.total_cents/100, precision: 2) %></h2>
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>

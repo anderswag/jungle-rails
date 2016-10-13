@@ -5,8 +5,8 @@
   <div>
       <h3><%= line_item.product.name %></h3>
       <%= image_tag line_item.product.image.tiny %>
-      <h5>Quantity: <%= line_item.product.quantity %></h5>
+      <h5>Quantity: <%= line_item.quantity %></h5>
       <p>Description: <%= line_item.product.description %></p>
-      <h5>Price: <%= line_item.product.price %></h5>
+      <h5>Price: $<%= number_with_precision(line_item.total_price_cents/100.00, precision: 2) %></h5>
   </div>
 
