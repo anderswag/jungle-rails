@@ -1,0 +1,12 @@
+<!-- <h4><%= line_item.product.name %></h4>
+<br>
+<p><%= line_item.product.description %></p>
+ -->
+  <div>
+      <h3><%= line_item.product.name %></h3>
+      <%= image_tag line_item.product.image.tiny %>
+      <h5>Quantity: <%= line_item.product.quantity %></h5>
+      <p>Description: <%= line_item.product.description %></p>
+      <h5>Price: <%= line_item.product.price %></h5>
+  </div>
+
