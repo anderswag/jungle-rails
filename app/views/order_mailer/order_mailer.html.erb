@@ -10,5 +10,9 @@
     <h1 class="text-center">Hello World</h1>
     <h2><%= @user.email %></h2>
     <h2><%= @order.id %></h2>
+    <% @order.line_items.each do |line_item| %>
+      <%= render :partial => "order_mailer/lineitem", :locals => {:line_item => line_item} %>
+    <% end %>
+     <h2>Total: <%= number_with_precision(@order.total_cents/100, precision: 2) %>
   </body>
 </html>

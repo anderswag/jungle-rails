@@ -1,5 +1,7 @@
 class Admin::CategoriesController < ApplicationController
 
+  http_basic_authenticate_with name: "Jungle", password: "Book"
+
   def index
     @categories = Category.order(id: :desc).all
   end
@@ -29,11 +31,6 @@ class Admin::CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(
       :name
-      # :description,
-      # :category_id,
-      # :quantity,
-      # :image,
-      # :price
     )
   end
 
