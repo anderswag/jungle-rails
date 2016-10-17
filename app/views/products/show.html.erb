@@ -27,5 +27,17 @@
     </div>
 
   </article>
+    <div style ="margin-top:20px;">
+      <%= form_for @review, url: product_reviews_path(@product) do |r| %>
+        <%= r.select :rating, [1,2,3,4,5] %>
+        <%= r.text_area :description %> <br/>
+        <%= r.submit %>
+    </div>
+<% end %>
+
+
+  <% @product.reviews.each do |review_item| %>
+    <%= render :partial => "products/reviewitem", :locals => {:review_item => review_item} %>
+  <% end %>
 
 </section>
