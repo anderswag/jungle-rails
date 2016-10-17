@@ -14,6 +14,12 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @review = Review.find params[:id]
+    @review.destroy
+    redirect_to(:back)
+  end
+
   def review_params
     new_params = params.require(:review).permit(:rating, :description, :product_id)
     new_params[:user_id] = current_user.id
@@ -21,3 +27,4 @@ class ReviewsController < ApplicationController
   end
 
 end
+
